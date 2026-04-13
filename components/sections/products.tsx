@@ -45,7 +45,7 @@ function ProductsSection() {
   ];
 
   return (
-    <div className="min-h-screen max-w-7xl  mb-10 mx-auto p-6 flex flex-col items-center justify-center space-y-10">
+    <div id="product" className="min-h-screen max-w-7xl  mb-10 mx-auto p-6 flex flex-col items-center justify-center space-y-10">
       <div className="bg-[#0298C71F] text-[#0298C7] text-sm w-fit rounded-full py-2 px-6 font-semibold">
         Our Products
       </div>
@@ -60,7 +60,7 @@ function ProductsSection() {
           decision journey — united by the same intelligent platform.
         </p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
         {products.map((prod) => (
           <div
             key={prod.id}

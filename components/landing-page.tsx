@@ -1,5 +1,7 @@
+import Footer from "./footer";
 import Header from "./header";
 import ApproachSection from "./sections/approach";
+import ContactSection from "./sections/contact-us";
 import FocusSection from "./sections/focus";
 import HeroSection from "./sections/hero";
 import MissingLayerSection from "./sections/matters";
@@ -30,6 +32,8 @@ function LandingPage() {
       <MissingLayerSection />
       <SupportSection />
       <PhilosophySection />
+      <ContactSection />
+      <Footer />
     </>
   );
 }

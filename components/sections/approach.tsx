@@ -3,11 +3,14 @@ import Image from "next/image";
 
 function ApproachSection() {
   return (
-    <div className="min-h-screen max-w-7xl -mt-20 mx-auto p-6 flex flex-col items-center justify-center space-y-10">
+    <div
+      id="approach"
+      className="min-h-screen max-w-7xl mx-auto p-6 flex flex-col items-center justify-center space-y-10"
+    >
       <div className="bg-[#0298C71F] text-[#0298C7] text-sm w-fit rounded-full py-2 px-6 font-semibold">
         Our Approach
       </div>
-      <div className="flex relative gap-15 text-left space-y-6">
+      <div className="flex flex-col lg:flex-row relative gap-15 text-left space-y-6">
         <div className="flex-flex-col space-y-4">
           <h1 className="text-4xl text-[#1D1D1D] xl:text-nowrap">
             From Learning to
@@ -72,7 +75,7 @@ function ApproachSection() {
           height={0}
           width={0}
           priority
-          className="absolute w-[70%] -bottom-30 xl:-bottom-40"
+          className="absolute w-full xl:w-[70%] -bottom-40 md:-bottom-80 lg:-bottom-40"
         />
       </div>
     </div>

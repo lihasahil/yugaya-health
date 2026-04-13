@@ -25,7 +25,10 @@ function FocusSection() {
     },
   ];
   return (
-    <div className="min-h-screen max-w-7xl mx-auto p-6 flex flex-col items-center justify-center space-y-10">
+    <div
+      id="focus"
+      className="min-h-screen max-w-7xl lg:mt-10 xl:mt-0 mx-auto p-6 flex flex-col items-center justify-center space-y-10"
+    >
       <div className="bg-[#0298C71F] text-[#0298C7] text-sm w-fit rounded-full py-2 px-6 font-semibold">
         Our Focus
       </div>
@@ -78,7 +81,9 @@ function FocusSection() {
         </h6>
         <p>
           Yugaya brings them together into a{" "}
-          <span className="font-bold">single, continuous system of development.</span>
+          <span className="font-bold">
+            single, continuous system of development.
+          </span>
         </p>
       </div>
     </div>

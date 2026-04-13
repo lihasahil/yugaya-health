@@ -71,60 +71,113 @@ function PhilosophySection() {
   };
 
   const gridPositionClass: Record<number, string> = {
-    0: "col-start-1 row-start-1",
-    1: "col-start-2 row-start-1",
-    2: "col-start-1 row-start-2",
-    3: "col-start-2 row-start-2",
+    0: "md:col-start-1 md:row-start-1",
+    1: "md:col-start-2 md:row-start-1",
+    2: "md:col-start-1 md:row-start-2",
+    3: "md:col-start-2 md:row-start-2",
   };
 
   return (
-    <div className="min-h-screen max-w-5xl mx-auto flex flex-col items-center justify-center space-y-10">
-      <div className="bg-[#0298C71F] text-[#0298C7] text-sm w-fit rounded-full py-2 px-6 font-semibold">
-        Our Philosophy
-      </div>
+    <section
+      id="philosophy"
+      className="relative py-10 px-4 sm:px-6 lg:px-8"
+      style={{
+        backgroundImage: `radial-gradient(85.92% 50% at 50% 50%, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.95) 100%), url('/assets/philosophy-bg.jpg')`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      <div className="min-h-screen max-w-5xl mx-auto flex flex-col items-center justify-center space-y-6 sm:space-y-8 lg:space-y-10 py-12 sm:py-16 lg:py-0">
+        <div className="bg-[#0298C71F] text-[#0298C7] text-xs sm:text-sm w-fit rounded-full py-2 px-4 sm:px-6 font-semibold">
+          Our Philosophy
+        </div>
 
-      <div className="relative grid max-w-4xl w-full mx-auto grid-cols-2 grid-rows-2 gap-10">
-        {philosophys.map((philosophy, cardIndex) => {
-          const gridPos = getGridPos(cardIndex);
-
-          return (
+        {/* Mobile: Vertical stack */}
+        <div className="flex flex-col gap-4 sm:gap-6 w-full md:hidden">
+          {philosophys.map((philosophy) => (
             <motion.div
               key={philosophy.id}
-              layout
               style={{ backgroundColor: philosophy.bg }}
-              transition={{
-                layout: { duration: 0.8, ease: [0.4, 0, 0.2, 1] },
-              }}
-              className={`${gridPositionClass[gridPos]} px-6 py-8 space-y-6 h-92 text-center flex flex-col justify-center items-center rounded-lg`}
+              className="px-4 sm:px-6 py-6 sm:py-8 space-y-4 sm:space-y-6 text-center flex flex-col justify-center items-center rounded-lg"
             >
               <div
                 style={{ backgroundColor: philosophy.iconBg }}
-                className="w-15 h-15 flex items-center justify-center rounded-full"
+                className="w-12 h-12 sm:w-15 sm:h-15 flex items-center justify-center rounded-full"
               >
                 <Image
                   src={philosophy.icon}
                   alt={philosophy.title}
                   height={0}
                   width={0}
-                  className="w-5 object-center"
+                  className="w-4 sm:w-5 object-center"
                 />
               </div>
 
               <h2
                 style={{ color: philosophy.titleColor }}
-                className="text-2xl font-semibold"
+                className="text-lg sm:text-xl lg:text-2xl font-semibold"
               >
                 {philosophy.title}
               </h2>
 
-              <p style={{ color: philosophy.descColor }} className="text-base">
+              <p
+                style={{ color: philosophy.descColor }}
+                className="text-sm sm:text-base"
+              >
                 {philosophy.description}
               </p>
             </motion.div>
-          );
-        })}
+          ))}
+        </div>
+
+        {/* Desktop/Tablet: 2x2 Grid with animation */}
+        <div className="hidden md:grid relative max-w-4xl w-full mx-auto grid-cols-2 grid-rows-2 gap-6 lg:gap-10">
+          {philosophys.map((philosophy, cardIndex) => {
+            const gridPos = getGridPos(cardIndex);
+
+            return (
+              <motion.div
+                key={philosophy.id}
+                layout
+                style={{ backgroundColor: philosophy.bg }}
+                transition={{
+                  layout: { duration: 0.8, ease: [0.4, 0, 0.2, 1] },
+                }}
+                className={`${gridPositionClass[gridPos]} px-4 lg:px-6 py-6 lg:py-8 space-y-4 lg:space-y-6 h-80 lg:h-92 text-center flex flex-col justify-center items-center rounded-lg`}
+              >
+                <div
+                  style={{ backgroundColor: philosophy.iconBg }}
+                  className="w-12 h-12 lg:w-15 lg:h-15 flex items-center justify-center rounded-full"
+                >
+                  <Image
+                    src={philosophy.icon}
+                    alt={philosophy.title}
+                    height={0}
+                    width={0}
+                    className="w-4 lg:w-5 object-center"
+                  />
+                </div>
+
+                <h2
+                  style={{ color: philosophy.titleColor }}
+                  className="text-xl lg:text-2xl font-semibold"
+                >
+                  {philosophy.title}
+                </h2>
+
+                <p
+                  style={{ color: philosophy.descColor }}
+                  className="text-sm lg:text-base"
+                >
+                  {philosophy.description}
+                </p>
+              </motion.div>
+            );
+          })}
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
 

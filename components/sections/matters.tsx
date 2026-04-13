@@ -2,8 +2,6 @@
 /* eslint-disable jsx-a11y/alt-text */
 "use client";
 
-import React from "react";
-
 const problems = [
   { text: "Learning is often theoretical", rotate: "-5deg" },
   { text: "Skills are disconnected from application", rotate: "-1deg" },
@@ -62,7 +60,7 @@ export default function MissingLayerSection() {
         }
       `}</style>
 
-      <section className="missing-layer-bg relative w-full overflow-hidden py-10 px-4 sm:px-8 lg:px-30">
+      <section className="missing-layer-bg relative w-full overflow-hidden py-10 px-4 sm:px-8 xl:px-30">
         {/* Header */}
         <div className="flex flex-col items-center gap-4 mb-10 text-center">
           <span className="inline-flex items-center justify-center px-6 py-1 bg-white rounded-full">
@@ -95,7 +93,7 @@ export default function MissingLayerSection() {
         </div>
 
         {/* Two-column cards */}
-        <div className="flex flex-col lg:flex-row gap-6 w-full max-w-300 mx-auto">
+        <div className="flex flex-col lg:flex-row gap-6 w-full">
           {/* Problems card */}
           <div
             className="flex flex-col items-center flex-1 rounded-3xl pt-7 px-4 pb-6 gap-5"
@@ -105,7 +103,7 @@ export default function MissingLayerSection() {
             }}
           >
             {/* Label */}
-            <div className="flex items-center justify-center px-4 py-2 bg-white rounded-full w-full max-w-[320px]">
+            <div className="flex items-center justify-center px-4 py-2 bg-white rounded-full w-full">
               <span
                 className="text-sm sm:text-base font-normal text-center"
                 style={{ fontFamily: "Poppins, sans-serif", color: "#E34446" }}
@@ -149,7 +147,7 @@ export default function MissingLayerSection() {
             }}
           >
             {/* Label */}
-            <div className="flex items-center justify-center px-4 py-2 bg-white rounded-full w-full max-w-[320px] mx-auto">
+            <div className="flex items-center justify-center px-4 py-2 bg-white rounded-full w-full">
               <div className="flex items-center gap-1 flex-wrap justify-center">
                 <span
                   style={{
@@ -188,13 +186,12 @@ export default function MissingLayerSection() {
               {solutions.map((s, i) => (
                 <div
                   key={i}
-                  className="flex items-center justify-center px-4 py-2.5 rounded-[270px] w-full"
+                  className="flex items-center justify-center px-4 py-2.5 rounded-[270px] w-fit"
                   style={{ background: "#0298C7" }}
                 >
                   <span
-                    className="text-sm sm:text-base font-normal text-white text-center"
+                    className="text-sm sm:text-base w-fit font-normal text-white text-center"
                     style={{
-                      fontFamily: "Poppins, sans-serif",
                       lineHeight: "150%",
                     }}
                   >
@@ -228,9 +225,8 @@ export default function MissingLayerSection() {
                     </svg>
                   </div>
                   <span
-                    className="font-bold text-sm"
+                    className="font-bold text-center text-sm"
                     style={{
-                      fontFamily: "Poppins, sans-serif",
                       color: "#0298C7",
                       lineHeight: "150%",
                     }}

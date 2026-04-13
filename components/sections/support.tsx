@@ -30,7 +30,7 @@ function SupportSection() {
     },
   ];
   return (
-    <div className="min-h-screen max-w-5xl mx-auto flex flex-col items-center justify-center space-y-10">
+    <div id="support" className="min-h-screen max-w-4xl xl:max-w-5xl mx-auto flex flex-col mt-10 items-center justify-center space-y-10">
       <div className="bg-[#0298C71F] text-[#0298C7] text-sm w-fit rounded-full py-2 px-6 font-semibold">
         Support
       </div>
@@ -44,7 +44,7 @@ function SupportSection() {
           communication, and well-being.
         </p>
       </div>
-      <div className="flex flex-col md:flex-row gap-10">
+      <div className="flex flex-col mx-4 lg:mx-0 lg:flex-row gap-10">
         {supports.map((support) => (
           <div
             key={support.id}

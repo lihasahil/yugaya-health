@@ -4,16 +4,15 @@ import { CircleCheck } from "lucide-react";
 export default function PlatformSection() {
   return (
     <div id="platform" className="min-h-screen max-w-7xl mx-auto p-4 sm:p-6 mt-30 lg:mt-10 flex flex-col items-center justify-center space-y-6 sm:space-y-8 lg:space-y-10">
-      <div className="bg-[#0298C71F] md:bg-[#FFFFFF] text-[#0298C7] text-xs sm:text-sm w-fit rounded-full py-2 px-4 sm:px-6 font-semibold">
+            <div className="bg-white text-[#0298C7] text-sm w-fit rounded-full py-2 px-6 font-medium">
         Our Platform
       </div>
       <div className="text-center space-y-4 sm:space-y-6 px-4">
-        <h1 className="text-2xl sm:text-3xl lg:text-4xl text-[#1D1D1D]">
+        <h1 className="text-2xl sm:text-3xl text-[#1D1D1D]">
           A Unified <span className="text-[#0298C7]">Intelligence </span>Layer
         </h1>
-        <p className="text-xs sm:text-sm text-[#1D1D1DCC] max-w-2xl mx-auto">
-          At the core of Yugaya is an adaptive intelligence system that
-          understands:
+        <p className="text-base text-[#1D1D1DCC] max-w-2xl mx-auto">
+        Our intelligence layer adapts to each person's learning patterns, responses, and performance over time.
         </p>
       </div>
 
@@ -30,7 +29,7 @@ export default function PlatformSection() {
               />
             </div>
             <div className="bg-white rounded-2xl shadow-[0_0_3.4px_0_#00000054] px-4 py-3 text-center">
-              <p className="text-sm font-semibold text-gray-800">
+              <p className="text-base font-semibold text-gray-800">
                 How an Individual <span className="text-[#0298C7]">learn.</span>
               </p>
             </div>
@@ -46,7 +45,7 @@ export default function PlatformSection() {
               />
             </div>
             <div className="bg-white rounded-2xl shadow-[0_0_3.4px_0_#00000054] px-4 py-3 text-center">
-              <p className="text-sm font-semibold text-gray-800">
+              <p className="text-base font-semibold text-gray-800">
                 Where they struggle and{" "}
                 <span className="text-[#0298C7]">improve</span> over time.
               </p>
@@ -63,7 +62,7 @@ export default function PlatformSection() {
               />
             </div>
             <div className="bg-white rounded-2xl shadow-[0_0_3.4px_0_#00000054] px-4 py-3 text-center">
-              <p className="text-sm font-semibold text-gray-800">
+              <p className="text-base font-semibold text-gray-800">
                 How they <span className="text-[#0298C7]">respond</span> to
                 complexity.
               </p>
@@ -80,7 +79,7 @@ export default function PlatformSection() {
               />
             </div>
             <div className="bg-white rounded-2xl shadow-[0_0_3.4px_0_#00000054] px-4 py-3 text-center">
-              <p className="text-sm font-semibold text-gray-800">
+              <p className="text-base font-semibold text-gray-800">
                 How they <span className="text-[#0298C7]">process</span>{" "}
                 information.
               </p>
@@ -94,7 +93,7 @@ export default function PlatformSection() {
         {/* Top-left label with pointer */}
         <div className="absolute top-[5] left-10 z-10">
           <div className="relative bg-white rounded-2xl shadow-[0_0_3.4px_0_#00000054] px-5 py-3 max-w-60">
-            <p className="text-sm font-semibold text-gray-800">
+            <p className="text-base font-semibold text-gray-800">
               How an Individual <span className="text-[#0298C7]">learn.</span>
             </p>
             {/* Pointer arrow pointing down-right */}
@@ -105,7 +104,7 @@ export default function PlatformSection() {
         {/* Top-right label with pointer */}
         <div className="absolute top-8 right-10 xl:right-30 z-10">
           <div className="relative bg-white rounded-2xl shadow-[0_0_3.4px_0_#00000054] px-5 py-3 max-w-60">
-            <p className="text-sm font-semibold text-gray-800">
+            <p className="text-base font-semibold text-gray-800">
               Where they struggle and{" "}
               <span className="text-[#0298C7]">improve</span> over time.
             </p>
@@ -117,7 +116,7 @@ export default function PlatformSection() {
         {/* Bottom-left label with pointer */}
         <div className="absolute bottom-30 left-1 xl:left-30 z-10">
           <div className="relative bg-white rounded-2xl shadow-[0_0_3.4px_0_#00000054] px-5 py-3 max-w-55">
-            <p className="text-sm font-semibold text-gray-800">
+            <p className="text-base font-semibold text-gray-800">
               How they <span className="text-[#0298C7]">respond</span> to
               complexity.
             </p>
@@ -129,7 +128,7 @@ export default function PlatformSection() {
         {/* Bottom-right label with pointer */}
         <div className="absolute bottom-40 right-60 z-10 shadow-lg rounded-xl">
           <div className="relative bg-white rounded-2xl shadow-[0_0_3.4px_0_#00000054] px-5 py-3 max-w-55">
-            <p className="text-sm font-semibold text-gray-800">
+            <p className="text-base font-semibold text-gray-800">
               How they <span className="text-[#0298C7]">process</span>{" "}
               information.
             </p>
@@ -173,10 +172,10 @@ export default function PlatformSection() {
       </section>
 
       <div className="bg-[#F8FBFD] w-full rounded-xl border border-[#0000000F] space-y-4 p-4 sm:p-6">
-        <h1 className="text-[#0F172A] max-w-5xl mx-auto text-sm sm:text-base">
+        <h1 className="text-[#0F172A] max-w-5xl mx-auto text-base">
           This intelligence layer powers all Yugaya products, enabling:
         </h1>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 text-xs sm:text-sm text-[#475569] max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 text-base text-[#475569] max-w-5xl mx-auto">
           <span className="flex gap-3 items-center">
             <CircleCheck
               fill="#0472941A"
@@ -210,7 +209,7 @@ export default function PlatformSection() {
             Continuous capability tracking
           </span>
         </div>
-        <div className="bg-[#E9FAFF] text-[#046381] text-xs sm:text-sm p-4 text-center rounded-xl">
+        <div className="bg-[#E9FAFF] text-[#046381] text-base p-4 text-center rounded-xl">
           Over time, this evolves into a comprehensive human intelligence system
           across learning, performance, and decision-making.
         </div>

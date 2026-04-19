@@ -60,26 +60,21 @@ export default function MissingLayerSection() {
         }
       `}</style>
 
-      <section className="missing-layer-bg relative w-full overflow-hidden py-10 px-4 sm:px-8 xl:px-30">
+      <section id="solutions" className="missing-layer-bg relative w-full overflow-hidden py-10 px-4 sm:px-8 xl:px-30">
         {/* Header */}
         <div className="flex flex-col items-center gap-4 mb-10 text-center">
-          <span className="inline-flex items-center justify-center px-6 py-1 bg-white rounded-full">
-            <span
-              className="text-sm sm:text-base font-semibold"
-              style={{ fontFamily: "Poppins, sans-serif", color: "#0298C7" }}
-            >
+                <div className="bg-white text-[#0298C7] text-sm w-fit rounded-full py-2 px-6 font-medium">
               Why This Matters?
-            </span>
-          </span>
+            </div>
 
           <h2
-            className="text-2xl sm:text-3xl lg:text-[40px] font-normal leading-tight lg:leading-13 max-w-3xl"
+            className="text-2xl sm:text-3xl font-normal leading-tight lg:leading-13 max-w-3xl"
             style={{ fontFamily: "Poppins, sans-serif", color: "#1D1D1D" }}
           >
             The Missing Layer in Human Development
           </h2>
           <p
-            className="text-sm sm:text-base font-normal max-w-4xl"
+            className="text-base font-normal max-w-4xl"
             style={{
               fontFamily: "Poppins, sans-serif",
               color: "rgba(29,29,29,0.8)",

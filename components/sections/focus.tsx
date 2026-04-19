@@ -13,7 +13,7 @@ function FocusSection() {
       id: "02",
       title: "Cognitive Health",
       description:
-        "How a person processes information, maintains focus, and adapts to new challenges. The quality of thinking, not just the quantity of knowledge.",
+        "Decision health reflects how well a person evaluates choices, manages uncertainty, and responds under pressure.",
       icon: "/assets/brain.svg",
     },
     {
@@ -29,15 +29,15 @@ function FocusSection() {
       id="focus"
       className="min-h-screen max-w-7xl lg:mt-10 xl:mt-0 mx-auto p-6 flex flex-col items-center justify-center space-y-10"
     >
-      <div className="bg-[#0298C71F] text-[#0298C7] text-sm w-fit rounded-full py-2 px-6 font-semibold">
+            <div className="bg-[#0298C71F] text-[#0298C7] text-sm w-fit rounded-full py-2 px-6 font-medium">
         Our Focus
       </div>
       <div className="text-center space-y-6">
-        <h1 className="text-4xl text-[#1D1D1D]">
+        <h1 className="text-2xl sm:text-3xl text-[#1D1D1D]">
           Health, <span className="text-[#0298C7]">reimagined</span> for how
           humans perform
         </h1>
-        <p className="text-sm text-[#1D1D1DCC] text-center max-w-3xl">
+        <p className="text-base text-[#1D1D1DCC] text-center max-w-3xl">
           At Yugaya, health goes beyond physical or clinical care. We focus on
           the capabilities that shape real-world outcomes — and bring them
           together into a single, continuous system of development.
@@ -64,13 +64,19 @@ function FocusSection() {
               </span>
             </div>
             <div className="text-[#F2F2F2] space-y-4 text-left">
-              <h3 className="text-base font-semibold">{focus.title}</h3>
-              <p className="text-xs">{focus.description}</p>
+              <h3 className="text-xl font-semibold">{focus.title}</h3>
+              <p className="text-base">{focus.description}</p>
             </div>
           </div>
         ))}
       </div>
-      <div className="text-[#1D1D1DCC] text-sm text-center space-y-2">
+
+      <div className="bg-[#E9FAFF] text-[#046381] text-base p-4 text-center rounded-xl">
+    These capabilities are often developed inconsistently, measured poorly, 
+    and treated as separate problems.
+
+</div>
+      {/* <div className="text-[#1D1D1DCC] text-sm text-center space-y-2">
         <h5>
           These are the underlying drivers of success across, yet today, they
           are:
@@ -85,7 +91,7 @@ function FocusSection() {
             single, continuous system of development.
           </span>
         </p>
-      </div>
+      </div> */}
     </div>
   );
 }

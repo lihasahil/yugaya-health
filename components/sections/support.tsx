@@ -30,15 +30,15 @@ function SupportSection() {
     },
   ];
   return (
-    <div id="support" className="min-h-screen max-w-4xl xl:max-w-5xl mx-auto flex flex-col mt-10 items-center justify-center space-y-10">
+    <div id="support" className="min-h-screen max-w-4xl xl:max-w-6xl mx-auto flex flex-col mt-10 items-center justify-center space-y-10">
       <div className="bg-[#0298C71F] text-[#0298C7] text-sm w-fit rounded-full py-2 px-6 font-semibold">
         Support
       </div>
       <div className="text-center space-y-6">
-        <h1 className="text-4xl text-[#1D1D1D]">
+        <h1 className="text-2xl sm:text-3xl text-[#1D1D1D]">
           How We <span className="text-[#0298C7]">Support </span>You
         </h1>
-        <p className="text-sm text-[#1D1D1DCC] text-center max-w-3xl">
+        <p className="text-base text-[#1D1D1DCC] text-center max-w-3xl">
           Yugaya enables organizations and individuals to better understand,
           develop, and support human intelligence across learning,
           communication, and well-being.
@@ -52,21 +52,21 @@ function SupportSection() {
           >
             <h1 className="text-[#051733] text-xl font-bold">{support.title}</h1>
             <div>
-              <h3 className="text-[#005772] text-sm">{support.description}</h3>
-              <div className="py-4 space-y-2 text-[#051733] text-xs">
+              <h3 className="text-[#005772] text-base">{support.description}</h3>
+              <div className="py-4 space-y-2 text-[#051733] text-base text-wrap">
                 {support.features.map((feat) => (
                   <span key={feat} className="flex gap-3 items-center">
                     <CircleCheck
                       fill="#0472941A"
                       strokeWidth="1"
-                      className="text-[#0298C7]"
+                      className="text-[#0298C7] shrink-0"
                     />{" "}
                     {feat}
                   </span>
                 ))}
               </div>
             </div>
-            <div className="bg-[#E9FAFF] font-semibold text-sm text-[#0298C7] rounded-xl p-4">
+            <div className="bg-[#E9FAFF] font-semibold text-base text-[#0298C7] rounded-xl p-4">
               {support.card}
             </div>
           </div>

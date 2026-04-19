@@ -8,7 +8,7 @@ function ProductsSection() {
     {
       id: 1,
       badge: "Children (6–14)",
-      title: "Spellwiards Cards",
+      title: "Spell Wizards",
       feature:
         "A structured, engaging platform focused on building foundations:",
       featureList: [
@@ -46,18 +46,17 @@ function ProductsSection() {
 
   return (
     <div id="product" className="min-h-screen max-w-7xl  mb-10 mx-auto p-6 flex flex-col items-center justify-center space-y-10">
-      <div className="bg-[#0298C71F] text-[#0298C7] text-sm w-fit rounded-full py-2 px-6 font-semibold">
+     <div className="bg-[#0298C71F] text-[#0298C7] text-sm w-fit rounded-full py-2 px-6 font-medium">
         Our Products
       </div>
       <div className="text-center space-y-6">
-        <h1 className="text-4xl text-[#1D1D1D]">
+        <h1 className="text-2xl sm:text-3xl text-[#1D1D1D]">
           Built across the
           <span className="text-[#0298C7]"> human </span>
           development lifecycle
         </h1>
-        <p className="text-sm text-[#1D1D1DCC]">
-          Two focused products, designed for distinct stages of the learning and
-          decision journey — united by the same intelligent platform.
+        <p className="text-base text-[#1D1D1DCC]">
+          Multiple products, One shared intelligence layer.
         </p>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
@@ -108,7 +107,7 @@ function ProductsSection() {
                   {li}
                 </li>
               ))}
-              <p className="text-sm bg-[#FFFFFF80] p-4 rounded-xl">
+              <p className="text-base bg-[#FFFFFF80] p-4 rounded-xl">
                 {prod.cardDescription}
               </p>
               <button

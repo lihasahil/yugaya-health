@@ -14,23 +14,23 @@ function HeroSection() {
 
       {/* Content */}
       <div className="absolute inset-0 z-10 flex flex-col pt-24 px-6 sm:px-10 max-w-4xl mx-auto text-[#1D1D1D] text-center items-center justify-center space-y-6 sm:space-y-8 lg:space-y-10">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium leading-tight">
-          Powering
-          <br />
-          Cognitive and Decision Health
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-medium leading-tight">
+          Powering Cognitive and Decision Health
         </h1>
 
-        <p className="text-sm sm:text-base font-normal leading-[150%] tracking-[0%] max-w-xl sm:max-w-2xl">
-          Yugaya Health builds intelligent platforms that improve how people
-          learn, think, and make decisions.
-        </p>
+        <p className="text-base font-normal leading-[150%] max-w-lg">
+  Yugaya Health builds intelligent platforms that improve how people learn,
+  think, and make decisions — from foundational learning in children to
+  strategic decision-making in adults, powered by proprietary AI and
+  behavioral science.
+</p>
 
-        <p className="text-sm sm:text-base font-normal leading-[150%] tracking-[0%] max-w-xl sm:max-w-2xl">
+        {/* <p className="text-sm sm:text-base font-normal leading-[150%] tracking-[0%] max-w-xl sm:max-w-2xl">
           From foundational learning in children to real-world strategic
           decision-making in adults, we are creating a unified ecosystem for
           cognitive and decision health, powered by proprietary AI models,
           behavioral science, and adaptive systems.
-        </p>
+        </p> */}
 
         {/* Email input — stacked on mobile, pill on sm+ */}
         <div className="w-full max-w-xl flex flex-col sm:flex-row sm:items-center sm:rounded-full sm:py-1.5 sm:pr-1.5 sm:pl-9 sm:h-16 sm:shadow-[0_4px_9.3px_rgba(2,152,199,0.12)] sm:border sm:border-[#053D4E47] sm:bg-white gap-3 sm:gap-0">

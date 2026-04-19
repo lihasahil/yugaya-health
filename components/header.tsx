@@ -33,7 +33,7 @@ function Header() {
         </div>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex gap-8 bg-white shadow-[0px_4px_4px_0px_#00000014] text-sm rounded-full py-4 px-8 text-[#1D1D1D]">
+        <div className="hidden md:flex gap-8 bg-white shadow-[0px_4px_4px_0px_#00000014] text-base rounded-full py-4 px-8 text-[#1D1D1D]">
           {navLinks.map(({ href, label }) => (
             <Link
               key={href}
@@ -54,7 +54,7 @@ function Header() {
                 .getElementById("contactus")
                 ?.scrollIntoView({ behavior: "smooth" });
             }}
-            className="hidden md:flex bg-[#0298C7] cursor-pointer text-white py-4 px-8 rounded-full gap-2 items-center text-sm"
+            className="hidden md:flex bg-[#0298C7] cursor-pointer text-white py-4 px-8 rounded-full gap-2 items-center text-base"
           >
             Get in Touch <ArrowUpRight size={16} />
           </button>
@@ -72,7 +72,7 @@ function Header() {
 
       {/* Mobile dropdown */}
       {menuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-100 px-6 py-4 flex flex-col gap-4 text-[#1D1D1D] text-sm shadow-md">
+        <div className="md:hidden bg-white border-t border-gray-100 px-6 py-4 flex flex-col gap-4 text-[#1D1D1D] text-base shadow-md">
           {navLinks.map(({ href, label }) => (
             <Link
               key={href}
@@ -89,7 +89,7 @@ function Header() {
                 .getElementById("contactus")
                 ?.scrollIntoView({ behavior: "smooth" });
             }}
-            className="mt-2 bg-[#0298C7] text-white py-3 px-6 rounded-full flex items-center justify-center gap-2 text-sm"
+            className="mt-2 bg-[#0298C7] text-white py-3 px-6 rounded-full flex items-center justify-center gap-2 text-base"
           >
             Get in Touch <ArrowUpRight size={16} />
           </button>

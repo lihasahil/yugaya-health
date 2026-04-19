@@ -26,10 +26,8 @@ export default function ContactSection() {
   return (
     <section id="contactus" className="bg-[#E0F3F9] w-full px-3 md:px-10 py-12 flex flex-col items-center gap-8">
       {/* Badge */}
-      <div className="bg-[rgba(2,152,199,0.12)] rounded-full px-7 py-1.5">
-        <span className="text-[#0298C7] font-semibold text-base font-[Poppins]">
-          Connect with us
-        </span>
+            <div className="bg-[#0298C71F] text-[#0298C7] text-sm w-fit rounded-full py-2 px-6 font-medium">
+          Talk to our team
       </div>
 
       {/* Main Row */}
@@ -48,7 +46,7 @@ export default function ContactSection() {
           </div>
 
           {/* Heading */}
-          <h2 className="text-[40px] leading-[1.29] font-normal text-black font-[Poppins]">
+          <h2 className="text-2xl sm:text-3xl leading-[1.29] font-normal text-black font-[Poppins]">
             Build the Next Generation of{" "}
             <span className="text-[#0298C7]">Thinkers</span> and{" "}
             <span className="text-[#0298C7]">Decision-Makers</span>
@@ -62,7 +60,7 @@ export default function ContactSection() {
 
           {/* Interest List */}
           <div>
-            <p className="text-sm text-[rgba(29,29,29,0.8)] font-[Poppins] mb-3">
+            <p className="text-base text-[rgba(29,29,29,0.8)] font-[Poppins] mb-3">
               If you&apos;re interested in:
             </p>
             <ul className="flex flex-col gap-3">
@@ -83,7 +81,7 @@ export default function ContactSection() {
                       />
                     </svg>
                   </span>
-                  <span className="text-sm text-[rgba(29,29,29,0.8)] font-[Poppins]">
+                  <span className="text-base text-[rgba(29,29,29,0.8)]">
                     {item}
                   </span>
                 </li>
@@ -101,7 +99,7 @@ export default function ContactSection() {
         <div className="bg-white border border-[rgba(26,89,109,0.37)] rounded-[22px] flex-1 p-4 md:p-10 w-full lg:w-140 flex flex-col gap-6 shrink-0">
           {/* Name */}
           <div className="flex flex-col gap-2">
-            <label className="text-black font-medium text-lg font-[Poppins]">
+            <label className="text-black font-medium text-base font-[Poppins]">
               Name
             </label>
             <input
@@ -116,7 +114,7 @@ export default function ContactSection() {
 
           {/* Email */}
           <div className="flex flex-col gap-2">
-            <label className="text-black font-medium text-lg font-[Poppins]">
+            <label className="text-black font-medium text-base font-[Poppins]">
               Email
             </label>
             <input
@@ -132,7 +130,7 @@ export default function ContactSection() {
           {/* Organization + Designation */}
           <div className="flex flex-col sm:flex-row gap-4">
             <div className="flex flex-col gap-2 flex-1">
-              <label className="text-black font-medium text-lg font-[Poppins]">
+              <label className="text-black font-medium text-base font-[Poppins]">
                 Organization
               </label>
               <input
@@ -145,7 +143,7 @@ export default function ContactSection() {
               />
             </div>
             <div className="flex flex-col gap-2 flex-1">
-              <label className="text-black font-medium text-lg font-[Poppins]">
+              <label className="text-black font-medium text-base font-[Poppins]">
                 Designation
               </label>
               <input
@@ -161,7 +159,7 @@ export default function ContactSection() {
 
           {/* Message */}
           <div className="flex flex-col gap-2">
-            <label className="text-black font-medium text-lg font-[Poppins]">
+            <label className="text-black font-medium text-base">
               What would you like to discuss?
             </label>
             <textarea
@@ -179,7 +177,7 @@ export default function ContactSection() {
             onClick={handleSubmit}
             className="bg-[#0298C7] hover:bg-[#0280a8] active:scale-[0.98] transition-all rounded-[15px] py-4.5 px-6 flex items-center justify-center gap-3 w-full cursor-pointer"
           >
-            <span className="text-white font-semibold text-base font-[Poppins]">
+            <span className="text-white font-medium text-base font-[Poppins]">
               Send a message
             </span>
             <svg

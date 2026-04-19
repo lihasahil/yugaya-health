@@ -89,7 +89,7 @@ function PhilosophySection() {
       }}
     >
       <div className="min-h-screen max-w-5xl mx-auto flex flex-col items-center justify-center space-y-6 sm:space-y-8 lg:space-y-10 py-12 sm:py-16 lg:py-0">
-        <div className="bg-[#0298C71F] text-[#0298C7] text-xs sm:text-sm w-fit rounded-full py-2 px-4 sm:px-6 font-semibold">
+              <div className="bg-[#0298C71F] text-[#0298C7] text-sm w-fit rounded-full py-2 px-6 font-medium">
           Our Philosophy
         </div>
 
@@ -123,7 +123,7 @@ function PhilosophySection() {
 
               <p
                 style={{ color: philosophy.descColor }}
-                className="text-sm sm:text-base"
+                className="text-base"
               >
                 {philosophy.description}
               </p>
@@ -168,7 +168,7 @@ function PhilosophySection() {
 
                 <p
                   style={{ color: philosophy.descColor }}
-                  className="text-sm lg:text-base"
+                  className="text-base"
                 >
                   {philosophy.description}
                 </p>

@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Footer from "./footer";
 import Header from "./header";
 import ApproachSection from "./sections/approach";
@@ -11,10 +14,16 @@ import ProductsSection from "./sections/products";
 import SupportSection from "./sections/support";
 
 function LandingPage() {
+  const [emailFromHero, setEmailFromHero] = useState("");
+
+  const handleEmailSubmit = (email: string) => {
+    setEmailFromHero(email);
+  };
+
   return (
     <>
       <Header />
-      <HeroSection />
+      <HeroSection onEmailSubmit={handleEmailSubmit} />
       <FocusSection />
       <div
         className="relative overflow-hidden"
@@ -32,7 +41,7 @@ function LandingPage() {
       <MissingLayerSection />
       <SupportSection />
       <PhilosophySection />
-      <ContactSection />
+      <ContactSection prefillEmail={emailFromHero} />
       <Footer />
     </>
   );

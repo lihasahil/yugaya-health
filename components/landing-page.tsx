@@ -12,6 +12,7 @@ import PhilosophySection from "./sections/philosophy";
 import PlatformSection from "./sections/platform";
 import ProductsSection from "./sections/products";
 import SupportSection from "./sections/support";
+import YugayaHealthFAQ from "./sections/faq";
 
 function LandingPage() {
   const [emailFromHero, setEmailFromHero] = useState("");
@@ -41,6 +42,7 @@ function LandingPage() {
       <MissingLayerSection />
       <SupportSection />
       <PhilosophySection />
+      <YugayaHealthFAQ />
       <ContactSection prefillEmail={emailFromHero} />
       <Footer />
     </>

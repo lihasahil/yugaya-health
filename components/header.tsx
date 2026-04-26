@@ -28,7 +28,7 @@ function Header() {
             alt="Yugaya Health"
             width={0}
             height={0}
-            className="w-auto h-9"
+            className="w-auto h-9 lg:h-8 xl:h-9"
           />
         </div>
 
@@ -54,7 +54,7 @@ function Header() {
                 .getElementById("contactus")
                 ?.scrollIntoView({ behavior: "smooth" });
             }}
-            className="hidden md:flex bg-[#0298C7] cursor-pointer text-white py-4 px-8 rounded-full gap-2 items-center text-base"
+            className="hidden md:flex bg-[#0298C7] cursor-pointer text-white py-4 px-8 lg:px-2 xl:px-8 rounded-full gap-2 items-center text-base"
           >
             Get in Touch <ArrowUpRight size={16} />
           </button>

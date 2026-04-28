@@ -2,30 +2,39 @@
 /* eslint-disable jsx-a11y/alt-text */
 "use client";
 
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+
 const problems = [
-  { text: "Learning is often theoretical", rotate: "-5deg" },
-  { text: "Skills are disconnected from application", rotate: "-1deg" },
-  { text: "Decision-making is learned too late", rotate: "-3deg" },
+  { text: "Learning is often <strong>theoretical</strong>", rotate: "-9deg" },
   {
-    text: "Employers need better thinkers, not just qualifications",
+    text: "Skills are <strong>disconnected</strong> from application",
+    rotate: "-1deg",
+  },
+  {
+    text: "Decision-making is learned <strong>too late</strong>",
+    rotate: "-5deg",
+  },
+  {
+    text: "Employers <strong>need better thinkers</strong>, not just qualifications",
     rotate: "3deg",
   },
   {
-    text: "Individuals face increasing complexity and uncertainty",
-    rotate: "-2deg",
+    text: "Individuals face increasing complexity and <strong>uncertainty</strong>",
+    rotate: "-5deg",
   },
   {
-    text: "Systems lack tools to continuously develop human capability",
-    rotate: "-2deg",
+    text: "Systems <strong>lack tools</strong> to continuously develop human capability",
+    rotate: "-5deg",
   },
 ];
 
 const solutions = [
-  "Making learning applied and interactive",
-  "Connecting knowledge to real decisions",
-  "Building systems that adapt to each individual",
-  "Unified learning journey",
-  "Compounding capabilities",
+  "Making learning <strong>applied and interactive</strong>",
+  "Connecting knowledge to <strong>real decisions</strong>",
+  "Building systems that adapt to <strong>each individual</strong>",
+  "<strong>Unified learning</strong> journey",
+  "Compounding <strong>capabilities</strong>",
 ];
 
 const capabilities = [
@@ -34,7 +43,75 @@ const capabilities = [
   "Effective Decision Making",
 ];
 
+function ProblemPill({
+  text,
+  rotate,
+  index,
+}: {
+  text: string;
+  rotate: string;
+  index: number;
+}) {
+  return (
+    <div
+      className="flex items-center px-4 py-2.5 rounded-[270px] w-fit max-w-full"
+      style={{
+        background: "rgba(255,255,255,0.55)",
+        transform: `rotate(${rotate})`,
+        alignSelf: index % 2 === 0 ? "flex-start" : "flex-end",
+      }}
+    >
+      <span
+        className="text-sm sm:text-base font-normal text-black whitespace-normal"
+        style={{ fontFamily: "Poppins, sans-serif", lineHeight: "150%" }}
+        dangerouslySetInnerHTML={{ __html: text }}
+      />
+    </div>
+  );
+}
+
+function SolutionPill({
+  text,
+  index,
+  inView,
+}: {
+  text: string;
+  index: number;
+  inView: boolean;
+}) {
+  const fromLeft = index % 2 === 0;
+  return (
+    <motion.div
+      initial={{ opacity: 0, x: fromLeft ? -80 : 80 }}
+      animate={
+        inView ? { opacity: 1, x: 0 } : { opacity: 0, x: fromLeft ? -80 : 80 }
+      }
+      transition={{
+        duration: 0.55,
+        delay: index * 0.1,
+        ease: [0.22, 1, 0.36, 1],
+      }}
+      className="flex items-center justify-center px-4 py-2.5 rounded-[270px] w-fit"
+      style={{ background: "#0298C7" }}
+    >
+      <span
+        className="text-sm sm:text-base font-normal text-white text-center"
+        style={{ lineHeight: "150%" }}
+        dangerouslySetInnerHTML={{ __html: text }}
+      />
+    </motion.div>
+  );
+}
+
 export default function MissingLayerSection() {
+  const sectionRef = useRef(null);
+  const problemsRef = useRef(null);
+  const solutionsRef = useRef(null);
+
+  const sectionInView = useInView(sectionRef, { once: true, margin: "-80px" });
+  const problemsInView = useInView(problemsRef, { once: false, amount: 0.3 });
+  const solutionsInView = useInView(solutionsRef, { once: false, amount: 0.3 });
+
   return (
     <>
       <style>{`
@@ -60,17 +137,23 @@ export default function MissingLayerSection() {
         }
       `}</style>
 
-      <section id="solutions" className="missing-layer-bg relative w-full overflow-hidden py-10 px-4 sm:px-8 xl:px-30">
+      <section
+        ref={sectionRef}
+        id="solutions"
+        className="missing-layer-bg relative w-full overflow-hidden py-10 px-4 sm:px-8 xl:px-30"
+      >
         {/* Header */}
-        <div className="flex flex-col items-center gap-4 mb-10 text-center">
-                <div className="bg-white text-[#0298C7] text-sm w-fit rounded-full py-2 px-6 font-medium">
-              Why This Matters?
-            </div>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={sectionInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="flex flex-col items-center gap-4 mb-10 text-center"
+        >
+          <div className="bg-white text-[#0298C7] text-sm w-fit rounded-full py-2 px-6 font-medium">
+            Why This Matters?
+          </div>
 
-          <h2
-            className="text-2xl sm:text-3xl font-normal leading-tight lg:leading-13 max-w-3xl"
-            style={{ fontFamily: "Poppins, sans-serif", color: "#1D1D1D" }}
-          >
+          <h2 className="text-2xl sm:text-3xl font-normal leading-tight lg:leading-13 max-w-3xl text-[#1D1D1D]">
             The Missing Layer in Human Development
           </h2>
           <p
@@ -85,60 +168,55 @@ export default function MissingLayerSection() {
             measured poorly, developed inconsistently, and treated as separate
             problems.
           </p>
-        </div>
+        </motion.div>
 
         {/* Two-column cards */}
         <div className="flex flex-col lg:flex-row gap-6 w-full">
           {/* Problems card */}
           <div
-            className="flex flex-col items-center flex-1 rounded-3xl pt-7 px-4 pb-6 gap-5"
+            className="flex flex-col items-center flex-1 rounded-3xl pt-7 px-4 pb-6 gap-5 overflow-hidden border border-[#E34446]"
             style={{
               background: "rgba(255,255,255,0.3)",
-              border: "1px solid #E34446",
             }}
           >
             {/* Label */}
             <div className="flex items-center justify-center px-4 py-2 bg-white rounded-full w-full">
-              <span
-                className="text-sm sm:text-base font-normal text-center"
-                style={{ fontFamily: "Poppins, sans-serif", color: "#E34446" }}
-              >
+              <span className="text-sm sm:text-base font-normal text-center text-[#E34446]">
                 The problem today
               </span>
             </div>
 
-            {/* Pills — stacked with slight rotation, no absolute positioning */}
-            <div className="flex flex-col gap-3 w-full">
-              {problems.map((p, i) => (
-                <div
-                  key={i}
-                  className="flex items-center px-4 py-2.5 rounded-[270px] w-fit max-w-full"
-                  style={{
-                    background: "rgba(255,255,255,0.55)",
-                    transform: `rotate(${p.rotate})`,
-                    alignSelf: i % 2 === 0 ? "flex-start" : "flex-end",
-                  }}
-                >
-                  <span
-                    className="text-sm sm:text-base font-normal text-black whitespace-normal"
-                    style={{
-                      fontFamily: "Poppins, sans-serif",
-                      lineHeight: "150%",
-                    }}
-                  >
-                    {p.text}
-                  </span>
-                </div>
-              ))}
+            {/* Pills wrapper */}
+            <div
+              className="flex flex-col gap-3 w-full"
+              style={{ padding: "8px 12px" }}
+            >
+              <motion.div
+                initial={{ y: "-110%" }}
+                animate={problemsInView ? { y: "0%" } : { y: "-110%" }}
+                transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+                className="flex flex-col gap-3 w-full"
+              >
+                {problems.map((p, i) => (
+                  <ProblemPill
+                    key={i}
+                    text={p.text}
+                    rotate={p.rotate}
+                    index={i}
+                  />
+                ))}
+              </motion.div>
             </div>
+            <div ref={problemsRef} style={{ height: 0 }} />
           </div>
 
           {/* Solutions card */}
           <div
-            className="flex flex-col flex-1 rounded-3xl pt-7 px-4 pb-6 gap-5"
+            className="flex flex-col flex-1 rounded-3xl pt-7 px-4 gap-5"
             style={{
               background: "rgba(255,255,255,0.3)",
               border: "1px solid #35ADD2",
+              justifyContent: "space-between",
             }}
           >
             {/* Label */}
@@ -177,58 +255,43 @@ export default function MissingLayerSection() {
             </div>
 
             {/* Solution pills */}
-            <div className="flex flex-col items-center gap-2 w-full">
+            <div className="flex flex-col items-center gap-2 w-full overflow-hidden">
               {solutions.map((s, i) => (
-                <div
+                <SolutionPill
                   key={i}
-                  className="flex items-center justify-center px-4 py-2.5 rounded-[270px] w-fit"
-                  style={{ background: "#0298C7" }}
-                >
-                  <span
-                    className="text-sm sm:text-base w-fit font-normal text-white text-center"
-                    style={{
-                      lineHeight: "150%",
-                    }}
-                  >
-                    {s}
-                  </span>
-                </div>
+                  text={s}
+                  index={i}
+                  inView={solutionsInView}
+                />
               ))}
             </div>
 
             {/* Capabilities list */}
-            <div className="flex flex-col gap-3 mt-2 pl-4">
+            <div
+              ref={solutionsRef}
+              className="flex flex-row items-center justify-center bg-white gap-4 mt-auto py-4 rounded-b-3xl -mx-4 flex-wrap"
+            >
               {capabilities.map((c, i) => (
-                <div key={i} className="flex flex-row items-center gap-3">
-                  <div
-                    className="flex items-center justify-center rounded-full shrink-0"
-                    style={{
-                      width: "20px",
-                      height: "20px",
-                      background: "rgba(4,114,148,0.1)",
-                      border: "1px solid #0298C7",
-                    }}
-                  >
-                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                      <path
-                        d="M2.5 6L5 8.5L9.5 3.5"
-                        stroke="#0298C7"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </div>
-                  <span
-                    className="font-bold text-center text-sm"
-                    style={{
-                      color: "#0298C7",
-                      lineHeight: "150%",
-                    }}
-                  >
-                    {c}
-                  </span>
-                </div>
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={
+                    solutionsInView
+                      ? { opacity: 1, y: 0 }
+                      : { opacity: 0, y: 30 }
+                  }
+                  transition={{
+                    duration: 0.45,
+                    delay: 0.4 + i * 0.1,
+                    ease: "easeOut",
+                  }}
+                  className="flex flex-row items-center gap-2"
+                >
+                  {i !== 0 && (
+                    <span className="text-[#0298C7] font-black">●</span>
+                  )}
+                  <span className="text-sm font-bold text-[#0298C7]">{c}</span>
+                </motion.div>
               ))}
             </div>
           </div>
